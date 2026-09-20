@@ -1,4 +1,4 @@
-from services.bible_manager import bible_man
+from data.bible_read import bible_read
 
 
 def search(keywords: str) -> list:

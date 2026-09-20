@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
-from services.vod import vod
-from services.search import search
+from core.vod import vod
+from core.search import search
 
 app = Flask(__name__)
 
@@ -12,9 +12,7 @@ def vod_route():
 
 @app.route('/search', methods = ['POST'])
 def search_route():
-    query = request.get_json()['query']
-
-    return jsonify({'results': search(query)})
+    return jsonify({'results': search(request.get_json()['query'])})
 
 
 if __name__ == '__main__':

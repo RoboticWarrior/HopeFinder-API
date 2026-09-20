@@ -1,5 +1,5 @@
-from services.bible_manager import bible_man
-from services.vod_manager import vod_man
+from data.bible_read import bible_read
+from data.vod_manager import vod_man
 from datetime import date
 
 

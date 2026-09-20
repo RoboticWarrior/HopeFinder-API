@@ -25,6 +25,7 @@
 #     db_con.close()
 
 #     return retvar
+from data.bible_read import bible_read
 
 
 def vod_man() -> dict:
