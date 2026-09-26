@@ -1,4 +1,4 @@
-from services.bible_manager import bible_man
+from core.vod import vod
 
 
-print(bible_man(book='Romans', chapter=10, verse=9))
+print(vod())

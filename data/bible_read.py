@@ -1,7 +1,7 @@
 import sqlite3
 
 
-def bible_read(book: str, chapter: int, verse: int) -> str:
+def bible_read(book: str, chapter: str, verse: str) -> str:
     retvar = ''
     bible_books = [
     "Genesis",
@@ -75,8 +75,9 @@ def bible_read(book: str, chapter: int, verse: int) -> str:
 
     with connection as db:
         cursor = db.cursor()
-        cursor.execute(f'SELECT {bible_books.index(book) + 1} FROM verses')
-        retvar = cursor.execute('')
+        cursor.execute(f'SELECT text FROM verses WHERE book = ? AND chapter = ? AND verse = ?', (str(bible_books.index(book) + 1), chapter, verse))
+        retvar = cursor.fetchone()
+
 
     connection.close()
 
