@@ -1,9 +1,14 @@
-from flask import Flask, jsonify, request
+from flask import Flask, render_template, jsonify, request
 import os
 from core.vod import vod
 from core.search import search
 
 app = Flask(__name__)
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 
 @app.route('/vod')
